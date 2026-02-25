@@ -1,0 +1,11 @@
+query,expected_behavior
+"What subjects did Emma Johnson study?",Should search File Search and return Emma's subjects
+"Create a pie chart for 1991 GDP in Western Europe",Should use Code Interpreter with GDP data
+"What is photosynthesis?",Should answer from general knowledge
+"Find all Biology sessions about Genetics",Should search File Search for Biology/Genetics records
+"Calculate the average GDP growth for Germany 2000-2020",Should use Code Interpreter
+"What study method is most effective?",Should search File Search for study method data
+"Explain the Krebs cycle with a mnemonic",Should provide study buddy style explanation
+"Show me Mason Jackson's quiz scores",Should search File Search for Mason's records
+"What topics in Chemistry were covered?",Should search File Search for Chemistry topics
+"Compare GDP per capita of USA and China in 2023",Should use Code Interpreter with GDP data
