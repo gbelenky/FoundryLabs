@@ -21,7 +21,7 @@ A collection of hands-on labs for building AI agents and workflows using VS Code
 
 ## Getting Started
 
-1. Start with [DeclarativeAgentsRemote](DeclarativeAgentsRemote/) to create your first no-code agent
-2. Try the [DeclarativeAgentsLocal](DeclarativeAgentsLocal/) Pet Planner Workshop to build agents with MCP servers in .NET
+1. Start with the [DeclarativeAgentsLocal](DeclarativeAgentsLocal/) Pet Planner Workshop to build agents with MCP servers in .NET
+2. Try [DeclarativeAgentsRemote](DeclarativeAgentsRemote/) to create no-code agents with Agent Builder and Foundry tools
 3. Move to [HostedAgents](HostedAgents/) for pro-code agents with the VS Code Foundry extension
 4. Explore [Workflows](Workflows/) for multi-agent orchestration patterns
