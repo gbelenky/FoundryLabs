@@ -6,8 +6,8 @@ A collection of hands-on labs for building AI agents and workflows using VS Code
 
 | Lab | Description | Status |
 |-----|-------------|--------|
-| [DeclarativeAgentsRemote](DeclarativeAgentsRemote/) | No-code declarative agents with Agent Builder, Foundry tools (File Search, Code Interpreter, Web Search), evaluation, and tracing | Ready |
 | [DeclarativeAgentsLocal](DeclarativeAgentsLocal/) | Pet Planner Workshop (.NET) - Build agents locally with MCP servers, tracing, and evaluation using C# | Ready |
+| [DeclarativeAgentsRemote](DeclarativeAgentsRemote/) | No-code declarative agents with Agent Builder, Foundry tools (File Search, Code Interpreter, Web Search), evaluation, and tracing | Ready |
 | [HostedAgents](HostedAgents/) | Containerized pro-code agents with Foundry Agent Service - create, deploy, and manage hosted agents | Ready |
 | [Workflows](Workflows/) | Multi-agent workflow orchestration with Foundry Workflows | Ready |
 

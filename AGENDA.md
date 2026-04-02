@@ -20,45 +20,45 @@ A hands-on, full-day workshop for building AI agents and workflows using VS Code
 - Sign in to Azure and configure the default Foundry project
 - Confirm access to GitHub Models via GitHub Copilot
 
-### 9:30 – 10:45 | Lab 1: Declarative Agents — Remote (75 min)
-
-> *No-code agents with Agent Builder and Foundry tools*
-
-| Time | Topic |
-|------|-------|
-| 9:30 – 9:45 | Enable local authentication, create agent in Agent Builder |
-| 9:45 – 10:00 | Code Interpreter — upload GDP dataset, generate visualizations |
-| 10:00 – 10:15 | Web Search — real-time information queries |
-| 10:15 – 10:30 | File Search — upload study sessions data, RAG queries |
-| 10:30 – 10:45 | Multi-tool instructions, evaluation & tracing in Foundry portal |
-
-### 10:45 – 11:00 | Break (15 min)
-
-### 11:00 – 12:30 | Lab 2: Declarative Agents — Local / Pet Planner Workshop (90 min)
+### 9:30 – 11:00 | Lab 1: Declarative Agents — Local / Pet Planner Workshop (90 min)
 
 > *.NET edition — build agents locally with MCP servers*
 
 | Time | Topic |
 |------|-------|
-| 11:00 – 11:15 | **Module 1** — Choose a model: compare trade-offs, test in Playground |
-| 11:15 – 11:30 | **Module 2** — Create an agent: define persona, instructions, test behavior |
-| 11:30 – 12:00 | **Module 3** — Connect an MCP server: build, configure, and test the Pet Planner MCP server |
-| 12:00 – 12:15 | **Module 4** — Generate agent code: export to C# with Microsoft Agent Framework |
-| 12:15 – 12:30 | **Module 5** — Trace agent responses: enable OpenTelemetry tracing, inspect in Tracing Viewer |
+| 9:30 – 9:45 | **Module 1** — Choose a model: compare trade-offs, test in Playground |
+| 9:45 – 10:00 | **Module 2** — Create an agent: define persona, instructions, test behavior |
+| 10:00 – 10:30 | **Module 3** — Connect an MCP server: build, configure, and test the Pet Planner MCP server |
+| 10:30 – 10:45 | **Module 4** — Generate agent code: export to C# with Microsoft Agent Framework |
+| 10:45 – 11:00 | **Module 5** — Trace agent responses: enable OpenTelemetry tracing, inspect in Tracing Viewer |
+
+### 11:00 – 11:15 | Break (15 min)
+
+### 11:15 – 11:45 | Lab 1 continued: Pet Planner Evaluation (30 min)
+
+| Time | Topic |
+|------|-------|
+| 11:15 – 11:45 | **Module 6** — Evaluate agent responses: Azure AI Evaluation SDK, create dataset, run evaluators, analyze results |
+
+### 11:45 – 1:00 | Lab 2: Declarative Agents — Remote (75 min)
+
+> *No-code agents with Agent Builder and Foundry tools*
+
+| Time | Topic |
+|------|-------|
+| 11:45 – 12:00 | Enable local authentication, create agent in Agent Builder |
+| 12:00 – 12:15 | Code Interpreter — upload GDP dataset, generate visualizations |
+| 12:15 – 12:30 | Web Search — real-time information queries |
+| 12:30 – 12:45 | File Search — upload study sessions data, RAG queries |
+| 12:45 – 1:00 | Multi-tool instructions, evaluation & tracing in Foundry portal |
 
 ---
 
-## 12:30 – 1:30 | Lunch Break (60 min)
+## 1:00 – 2:00 | Lunch Break (60 min)
 
 ---
 
 ## Afternoon
-
-### 1:30 – 2:00 | Lab 2 continued: Pet Planner Evaluation (30 min)
-
-| Time | Topic |
-|------|-------|
-| 1:30 – 2:00 | **Module 6** — Evaluate agent responses: Azure AI Evaluation SDK, create dataset, run evaluators, analyze results |
 
 ### 2:00 – 3:15 | Lab 3: Hosted Agents (75 min)
 
@@ -98,8 +98,8 @@ A hands-on, full-day workshop for building AI agents and workflows using VS Code
 | Block | Duration | Lab |
 |-------|----------|-----|
 | Environment Setup | 30 min | — |
-| Declarative Agents Remote | 75 min | Lab 1 |
-| Pet Planner Workshop (.NET) | 120 min | Lab 2 |
+| Pet Planner Workshop (.NET) | 120 min | Lab 1 |
+| Declarative Agents Remote | 75 min | Lab 2 |
 | Hosted Agents | 75 min | Lab 3 |
 | Workflows | 60 min | Lab 4 |
 | Wrap-Up & Q&A | 30 min | — |
