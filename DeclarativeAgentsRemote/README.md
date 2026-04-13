@@ -74,13 +74,14 @@ This should now return `false`.
 
 1. Open VS Code
 2. Click on the **AI Toolkit** icon in the Activity Bar (left sidebar)
-3. Under **Agent and Workflow Tools**, click **Agent Builder**
-4. Sign in to Azure if prompted
-5. Select your Microsoft Foundry project/resource
+3. Under **Build**, click **Create Agent**
+4. In the **Create Agent** dialog, under **Design an agent without code**, click **Open Agent Builder**
+5. Sign in to Azure if prompted
+6. Select your Microsoft Foundry project/resource
 
 ### Step 2: Create a New Agent
 
-1. In Agent Builder, click **Create New Agent** or **+**
+1. In the Agent Builder, configure your agent:
 3. Configure your agent:
    - **Name**: Give your agent a descriptive name
    - **Model**: Select your deployed model (e.g., `gpt-4.1-mini`)
@@ -339,7 +340,7 @@ When you save/publish to Microsoft Foundry:
 
 ## Evaluation
 
-Evaluate your datasets using evaluators to measure agent performance. Access Evaluation from **AI Toolkit** → **Agent and Workflow Tools** → **Evaluation**.
+Evaluate your datasets using evaluators to measure agent performance. Access Evaluation from **AI Toolkit** → **Monitor** → **Evaluation**.
 
 ![Evaluation](evaluation.png)
 
@@ -360,7 +361,7 @@ Or use CSV format with these columns.
 
 ### Step 2: Create an Evaluation
 
-1. Open **AI Toolkit** → **Agent and Workflow Tools** → **Evaluation**
+1. Open **AI Toolkit** → **Monitor** → **Evaluation**
 2. Click **+ Create Evaluation**
 3. Provide the following:
    - **Evaluation job name**: Use default or enter a custom name

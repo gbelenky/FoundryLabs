@@ -68,8 +68,8 @@ Welcome to the PetPlanner Workshop! This guide walks you through building a Pet 
 1. In Visual Studio Code, in the **Azure Resources** extension, expand your Azure subscription and expand the **Microsoft Foundry** service.
 2. Right click the Foundry project that you created for this workshop and select **Open in Microsoft Foundry Extension**. This sets the project as the default project.
 3. Open the **AI Toolkit** extension.
-4. Expand **My Resources > Models > Microsoft Foundry**.
-5. Confirm that your **gpt-4.1-mini** deployment is listed.
+4. Expand **My Resources** and locate your Foundry project (it will show as the default).
+5. Confirm that your **gpt-4.1-mini** deployment is listed under the project.
 
 ### Documentation
 
@@ -86,25 +86,13 @@ The model determines how your agent thinks and responds. You'll choose a model t
 
 ### Instructions
 
-1. Open a new GitHub Copilot chat window via the **Toggle Chat** icon.
-2. Click the **Set Mode** drop-down and select **Agent**.
-3. Click the **Pick Model** drop-down and select **Claude Sonnet 4.5**.
-4. In the chat window, enter the **GitHub Copilot Prompt** provided below and submit.
-5. Review the response from GitHub Copilot. Given the non-deterministic nature of language models, responses will vary.
-6. If GitHub Copilot requests to open the **Model Catalog**, respond with **Yes** OR click the provided button to access the **Model Catalog**. Alternatively, you can open the **AI Toolkit** extension and navigate to **Model Tools > Model Catalog**.
-7. In the **Model Catalog** select the **Hosted by** drop-down and select **GitHub**.
-8. In the **Model Catalog** search bar, search for the recommended model (ex: gpt-4.1-mini). Once the model is found, click **Try in Playground**.
-9. If prompted to sign-in to GitHub, select **Allow**. For **Select user to authorize** click **Continue** next to the username. Next, for **Visual Studio Code is requesting additional permissions**, select **Authorize Visual-Studio-Code**. After sign-in is complete, select **Open** to open Visual Studio Code.
-10. In the **Playground**, in **Model Preferences**, confirm that **OpenAI gpt-4.1-mini (via GitHub)** is selected.
-11. For the **System prompt**, enter the **Agent System Prompt** provided below.
-12. In the chat window, enter the prompt: `It's raining today. What should my dog and I do?`
-13. Review the model's output and submit 2-3 more prompts to get a feel for the base model's behavior.
-
-### GitHub Copilot Prompt
-
-```
-I want to build a Pet Planner agent. Its job is to help pet owners sniff out the perfect playdate by: (1) checking the weather, (2) fetching fun activity ideas, and (3) pointing to the best spot in town. Which language model(s) would you recommend for this scenario, and why? Explain the trade-offs between models (e.g., reasoning ability, cost, latency, context length) so that I can make an informed choice.
-```
+1. In the **AI Toolkit** extension, navigate to **Discover > Model Catalog**.
+2. In the **Model Catalog** select the **Hosted by** drop-down and select **Microsoft Foundry**.
+3. Search for **gpt-4.1-mini** and click **Try in Playground**.
+4. In the **Playground**, confirm that **gpt-4.1-mini** is selected in **Model Preferences**.
+5. For the **System prompt**, enter the **Agent System Prompt** provided below.
+6. In the chat window, enter the prompt: `It's raining today. What should my dog and I do?`
+7. Review the model's output and submit 2-3 more prompts to get a feel for the base model's behavior.
 
 ### Agent System Prompt
 
@@ -114,15 +102,30 @@ You are a warm, pet-loving assistant that helps users plan safe and fun breed pl
 
 ### What's Happening
 
-GitHub Copilot calls 1 tool:
+You're testing how the base model responds to pet-related prompts before adding agent logic and tools. This helps you understand the model's natural behavior.
 
-- Get AI Model Guidance
+<details>
+<summary><strong>Optional: Learn why we chose this model</strong></summary>
 
-> **Note**: If GitHub Copilot doesn't invoke the AI Toolkit tools when generating it's response, you can enter `#aitk` in the chat window to explicitly select which tool(s) you'd like GitHub Copilot to use prior to submitting your prompt.
+Want to understand the trade-offs between different models? Ask GitHub Copilot!
+
+1. Open a new GitHub Copilot chat window via the **Toggle Chat** icon.
+2. Click the **Set Mode** drop-down and select **Agent**.
+3. Enter this prompt:
+
+```
+I want to build a Pet Planner agent. Its job is to help pet owners sniff out the perfect playdate by: (1) checking the weather, (2) fetching fun activity ideas, and (3) pointing to the best spot in town. Which language model(s) would you recommend for this scenario, and why? Explain the trade-offs between models (e.g., reasoning ability, cost, latency, context length) so that I can make an informed choice.
+```
+
+GitHub Copilot will invoke the **Get AI Model Guidance** tool from AI Toolkit to provide recommendations.
+
+> **Tip**: If GitHub Copilot doesn't invoke the AI Toolkit tools, enter `#aitk` in the chat window before submitting your prompt.
+
+</details>
 
 ### Checkpoint
 
-You should now have a model recommendation for your agent and a deployed Microsoft Foundry version of the model.
+You should now have tested the gpt-4.1-mini model in the Playground and understand its base behavior.
 
 ---
 
@@ -132,8 +135,9 @@ Agents connect your model with logic and personality. They define how your AI in
 
 ### Instructions
 
-1. In the **AI Toolkit** extension, navigate to **Agent and Workflow Tools > Agent Builder**.
-2. In the **Agent Builder**, for the **Agent Name** enter: `Pet Planner`
+1. In the **AI Toolkit** extension, navigate to **Build > Create Agent**.
+2. In the **Create Agent** dialog, under **Design an agent without code**, click **Open Agent Builder**.
+3. In the **Agent Builder**, for the **Agent Name** enter: `PetPlanner`
 3. For the **Model** drop-down, select **gpt-4.1-mini Remote via Microsoft Foundry**.
 4. For the **Instructions**, enter the **Agent System Prompt** provided below.
 5. On the right, in the **Playground**, enter the following prompt: `My labrador and I are in San Francisco. Recommend something fun to do.`
@@ -183,15 +187,15 @@ Model Context Protocol (MCP) servers allow agents to fetch live or contextual da
 
 AI Toolkit stores MCP server configurations in a file at `%USERPROFILE%\.aitk\mcp.json` (e.g., `C:\Users\YourUsername\.aitk\mcp.json`).
 
-1. In VS Code, open the AI Toolkit extension sidebar.
+1. Open the **Pet Planner** agent in **Agent Builder** (navigate to **Build > Create Agent > Open Agent Builder**).
 
-2. Navigate to **MCP Workflow > Browse more MCP Servers**.
+2. In the **Tools** section, click the **+** button and select **MCP Server**.
 
-3. Select the **Manual** tab.
+3. In the dropdown, scroll down and select **Could not find one? Browse more MCP servers**.
 
-4. Click **Configure** under **"Command (stdio)"**.
+4. Scroll to the bottom and select **Command (stdio)**.
 
-5. When prompted for **Command to run**, enter the full path to run your MCP server:
+5. When prompted for **Command to run**, enter:
    ```
    dotnet run --project c:\labs\FoundryLabs\DeclarativeAgentsLocal\src\PetPlannerServer.csproj
    ```
@@ -222,29 +226,23 @@ AI Toolkit stores MCP server configurations in a file at `%USERPROFILE%\.aitk\mc
 
 ### Part C: Add the MCP Server to Your Agent
 
-1. In the AI Toolkit extension, navigate to **MCP Workflow > Browse more MCP Servers**.
+1. Return to the **Agent Builder** with your **Pet Planner** agent open.
 
-2. Select the **Configured** tab. You should now see **pet-planner** listed.
+2. In the **Tools** section, click the **+** button and select **MCP Server**.
 
-3. Open your **Pet Planner** agent in the **Agent Builder** (navigate to **My Resources > Agents** and select it).
+3. Select **pet-planner** from the dropdown list.
 
-4. In the Agent Builder, within the **Tools** section, click the **+** button.
-
-5. Select **MCP Server**.
-
-6. In the **Add MCP Server to Agent** window, select **pet-planner**.
-
-7. When prompted to **Configure Tools**, select all tools and click **OK**:
+4. When prompted to **Configure Tools**, select all tools and click **OK**:
    - `GetWeather` - Check weather conditions
    - `GetPetActivities` - Get activity recommendations
    - `FindPetFriendlyLocations` - Find pet-friendly places
    - `GetPetCareTips` - Get weather-specific pet care tips
 
-8. The agent's **Instructions** should be modified to leverage its tools. Next to **Instructions**, click **Improve**.
+5. The agent's **Instructions** should be modified to leverage its tools. Next to **Instructions**, click **Improve**.
 
-9. In the **Improve an instruction** window, enter: `include instructions to leverage the MCP tools available to the agent`. Click **Improve**.
+6. In the **Improve an instruction** window, enter: `include instructions to leverage the MCP tools available to the agent`. Click **Improve**.
 
-10. Review and adjust the improved instructions, or replace them with the **Agent System Prompt** provided below.
+7. Review and adjust the improved instructions, or replace them with the **Agent System Prompt** provided below.
 
 ### Part D: Test the Agent
 
@@ -267,7 +265,7 @@ AI Toolkit stores MCP server configurations in a file at `%USERPROFILE%\.aitk\mc
 
 | Issue | Solution |
 |-------|----------|
-| Server not appearing in Configured tab | Reload VS Code (`Ctrl+Shift+P` → `Reload Window`) |
+| Server not appearing in MCP Server dropdown | Reload VS Code (`Ctrl+Shift+P` → `Reload Window`) |
 | "Command not found" error | Ensure `dotnet` is in your PATH and the project path is correct |
 | Tools not working | Verify the project builds without errors (`dotnet build`) |
 | JSON parse error | Check `mcp.json` for syntax errors (use proper escaping for backslashes: `\\`) |
@@ -333,33 +331,71 @@ Generating agent code allows you to:
 - Add features, APIs, and new data connections directly in code.
 - Collaborate through Git and version your agent like any other software project.
 
-> **Warning**: Do not stop the debugger. The debugger should remain running for the rest of this workshop. If the debugger is stopped, the Pet Planner MCP server will no longer run locally which prevents server access for the agent.
+> **Note**: The AI Toolkit's **View Code** generates Python code. Since this workshop uses .NET, we'll use GitHub Copilot to generate C# code with the Microsoft Agent Framework SDK.
 
 ### Instructions
 
-1. At the bottom left of the **Agent Builder**, click **View Code**.
-2. For the **SDK** select **Microsoft Agent Framework**.
-3. For the **Programming Language** select **C#**.
-4. Save the file at the root of your project as `PetPlannerAgent.cs`.
-5. Before running the script, open a new **terminal** and run the command `az login` to authenticate to Azure. A log-in window will appear. When prompted, select your username and click **Continue**.
-6. Next, in the **terminal**, enter the corresponding number for your subscription.
-7. Create a new console project and add the required packages:
+#### Part A: Set Up the Project
+
+1. Open a new **terminal** and run `az login` to authenticate to Azure.
+2. Create a new console project:
    ```bash
+   cd DeclarativeAgentsLocal
    dotnet new console -n PetPlannerAgent
    cd PetPlannerAgent
-   dotnet add package Azure.AI.Agents.Persistent --prerelease
+   dotnet add package Azure.AI.Projects --version 2.0.0
    dotnet add package Azure.Identity
    ```
-8. Copy the generated code into `Program.cs`.
-9. In the **terminal** run the command:
+
+#### Part B: Generate Agent Code
+
+3. Open a new GitHub Copilot chat window via the **Toggle Chat** icon.
+4. Click the **Set Mode** drop-down and select **Agent**.
+5. Enter the following prompt:
+   ```
+   Generate C# code for a Pet Planner agent using Azure.AI.Projects SDK (version 2.0.0).
+   The agent should:
+   - Connect to my Microsoft Foundry project using DefaultAzureCredential
+   - Use the gpt-4.1-mini model deployment
+   - Have instructions for a warm, pet-loving assistant that helps plan safe pet playdates
+   - Accept user input and respond with recommendations
+   Use Azure.AI.Projects and Azure.Identity packages.
+   ```
+6. Review the generated C# code from GitHub Copilot.
+
+> **Tip**: If GitHub Copilot doesn't generate code using the correct SDK, enter `#aitk` before your prompt to invoke AI Toolkit tools.
+
+#### Part C: Run the Agent
+
+7. Copy the generated code into `Program.cs`.
+8. Update the connection string with your Foundry project endpoint.
+9. Run the agent:
    ```bash
    dotnet run
    ```
 10. Review the agent output.
 
+### Key SDK Patterns
+
+The Azure AI Projects SDK uses these patterns:
+
+```csharp
+using Azure.AI.Projects;
+using Azure.Identity;
+
+var connectionString = "your-foundry-project-connection-string";
+var client = new AIProjectClient(connectionString, new DefaultAzureCredential());
+
+var agent = await client.GetAgentsClient().CreateAgentAsync(
+    model: "gpt-4.1-mini",
+    name: "PetPlanner",
+    instructions: "You are a warm, pet-loving assistant..."
+);
+```
+
 ### What's Happening
 
-The AI Toolkit's prototype definitions are now being translated into executable code.
+GitHub Copilot generates production-ready C# code using the Azure AI Projects SDK.
 This marks a key transition:
 
 - The AI Toolkit was ideal for prototyping — testing logic, tuning behavior, and exploring ideas quickly.
@@ -373,7 +409,7 @@ You now have full flexibility to:
 
 ### Checkpoint
 
-You should have a Pet Planner agent file (i.e. **PetPlannerAgent**) that runs successfully.
+You should have a Pet Planner agent that runs successfully and responds to pet planning queries.
 
 ---
 
@@ -391,7 +427,7 @@ Tracing reveals the decision path your agent takes — which helps debug and imp
 4. Click the **Pick Model** drop-down and select **Claude Sonnet 4.5**.
 5. In the chat window, enter the **GitHub Copilot Prompt** provided below and submit.
 6. Review the response from GitHub Copilot. Given the non-deterministic nature of language models, responses will vary.
-7. If GitHub Copilot requests to open the **Tracing Viewer**, respond with **Yes** OR click the provided button to access the **Tracing Viewer**. Alternatively, you can open the **AI Toolkit** extension and navigate to **Agent and Workflow Tools > Tracing**. If prompted to allow public and private networks to access this app, select **Allow**.
+7. If GitHub Copilot requests to open the **Tracing Viewer**, respond with **Yes** OR click the provided button to access the **Tracing Viewer**. Alternatively, you can open the **AI Toolkit** extension and navigate to **Monitor > Tracing**. If prompted to allow public and private networks to access this app, select **Allow**.
 8. In the **Tracing Viewer** confirm that the **Collector** has started (i.e. blue button under **Tracing**). If the **Collector** has not started, click **Start Collector**.
 9. In the **Terminal**, run the command:
    ```bash

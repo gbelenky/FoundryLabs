@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeclarativeAgentsLocal", "DeclarativeAgentsLocal", "{20BDE253-2079-9935-424B-82ABFAD1F098}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{40483BC8-FBBC-96C9-5E06-D7EBD8D04D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetPlannerServer", "DeclarativeAgentsLocal\src\PetPlannerServer.csproj", "{714BBAF7-109A-AAE3-5F71-E0E896254799}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{714BBAF7-109A-AAE3-5F71-E0E896254799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714BBAF7-109A-AAE3-5F71-E0E896254799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714BBAF7-109A-AAE3-5F71-E0E896254799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714BBAF7-109A-AAE3-5F71-E0E896254799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40483BC8-FBBC-96C9-5E06-D7EBD8D04D80} = {20BDE253-2079-9935-424B-82ABFAD1F098}
+		{714BBAF7-109A-AAE3-5F71-E0E896254799} = {40483BC8-FBBC-96C9-5E06-D7EBD8D04D80}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95377595-AB68-4BD4-B84C-E46A2AAC72B7}
+	EndGlobalSection
+EndGlobal
